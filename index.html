@@ -10,14 +10,54 @@
     padding: 10px;
   }
 
-  h1 { text-align: center; color: rgb(32, 68, 230); font-size: 30px; margin-top: 20px; }
-  h2 { text-align: center; color: rgb(245, 26, 26); font-size: 20px; margin-top: 10px; }
+img.logo {
+    position: fixed; 
+    top: 8px;    
+    left: 8px;     
+    max-width: 150px;
+    height: auto;
+    z-index: 1000;  
+}
+img.logo2 {
+    position: fixed; 
+    top: 8px;    
+    right: 8px;     
+    max-width: 150px;
+    height: auto;
+    z-index: 1000;
+}
 
+  h1 { 
+    text-align: center;
+ color: rgb(32, 68, 230); 
+ font-size: 30px; 
+ margin-top: 20px; 
+}
+
+  h2 { 
+    text-align: center; 
+    color: rgb(245, 26, 26); 
+    font-size: 20px;
+     margin-top: 10px; 
+    }
+
+    h3 {
+        position: fixed;
+    right: 20px;
+    top: 125px;
+    color: lightgreen;
+    font-size: 18px;
+    margin-top: 60px;
+    }
   /* checkbox toggle principal */
-  #toggle { display: none; }
+  #toggle {
+     display: none;
+     }
 
   /* radios para elegir sección (ocultos) */
-  input[name="menu"] { display: none; }
+  input[name="menu"] { 
+    display: none;
+ }
 
   /* Botón Productos (igual al tuyo) */
   label[for="toggle"] {
@@ -32,8 +72,7 @@
     border-radius: 5px;
   }
 
-  /* contenedor que muestra los "botones arriba" (ahora labels) */
-  #botonesArriba {
+   #botonesArriba {
     display: none;
     margin-top: -50px;
     text-align: center;
@@ -54,9 +93,13 @@
   /* comportamiento del toggle principal */
   #toggle:checked ~ #Tema,
   #toggle:checked ~ #Subtema,
-  #toggle:checked ~ label[for="toggle"] { display: none; }
+  #toggle:checked ~ label[for="toggle"] { 
+    display: none; 
+}
 
-  #toggle:checked ~ #botonesArriba { display: block; }
+  #toggle:checked ~ #botonesArriba { 
+    display: block; 
+}
 
   /* contenedor de secciones (tablas) - oculto por defecto */
   #productos { display: none; margin-top: 20px; }
@@ -71,8 +114,19 @@
   #baja-radio:checked ~ #productos #baja { display: block; }
 
   /* tablas (simple) */
-  table { width: 90%; margin: 10px auto; border-collapse: collapse; }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  table {
+     width: 100%;
+     margin-top: 15px auto; 
+     border-collapse: collapse; }
+     
+     th { 
+    background-color: rgb(43, 128, 255);
+    color: white; }
+  th, td { 
+    border: 2px solid rgb(43, 128, 255); 
+    padding: 8px; 
+    text-align: left; }
+
 
   /* estilo visual para el label seleccionado (opcional) */
   #consulta-radio:checked ~ #botonesArriba label[for="consulta-radio"],
@@ -83,6 +137,8 @@
 </style>
 </head>
 <body>
+   <img src="https://c.tenor.com/7MvLFfSGVvEAAAAC/tenor.gif" class="logo2">
+    <img src="https://img.freepik.com/vector-premium/productos-lacteos-canasta-mimbre-queso-requeson-mantequilla-comida-diaria-productos-agricolas-frescos-tradicionales_169241-2935.jpg" alt="Logo" class="logo">
 
   <!-- toggle principal -->
   <input type="checkbox" id="toggle">
@@ -94,6 +150,7 @@
 
   <h1 id="Tema">La Canasta Para El Hogar</h1>
   <h2 id="Subtema">BIENVENIDOS</h2>
+  <h3>En Proceso....</h3>
 
   <label for="toggle">Productos</label>
 
@@ -122,18 +179,68 @@
 
     <div id="alta" class="section">
       <h2>Alta de Productos</h2>
-      <table>
-        <thead>
-          <tr><th>Id_prod</th><th>Producto</th><th>Marca</th><th>Departamento</th><th>Precio</th><th>Cantidad</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>01</td><td>Sopa instantánea</td><td>Maruchan</td><td>Sopas</td><td>$18</td><td>100</td></tr>
-          <tr><td>02</td><td>Perfume Hello Kitty</td><td>Fuller</td><td>Perfumes</td><td>$80</td><td>100</td></tr>
-        </tbody>
-      </table>
-      <div style="text-align:center; margin-top:10px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id_prod</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Departamento</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                   <td>01</td>
+                    <td>Sopa instantanea</td>
+                    <td>Maruchan</td>
+                    <td>Vaso</td>
+                    <td>Sopas</td>
+                    <td>$18</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Perfume Hello Kitty</td>
+                    <td>Fuller</td>
+                    <td>Color rosita</td>
+                    <td>Perfumes</td>
+                    <td>$80</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Sabritas</td>
+                    <td>Cheetos</td>
+                    <td>Moradito</td>
+                    <td>Chucherias</td>
+                    <td>$15</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Verduras</td>
+                    <td>No tiene</td>
+                    <td>No tiene</td>
+                    <td>Verduras</td>
+
+                    <td>$25</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Refrescos</td>
+                    <td>Peñafiel</td>
+                    <td>Peñafiel</td>
+                    <td>Sodas</td>
+                    <td>$10</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
         <button>Agregar Seleccionados</button>
-      </div>
     </div>
 
     <div id="baja" class="section">
