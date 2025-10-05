@@ -82,7 +82,7 @@ img.logo2 {
     display: inline-block;
     margin: 75px;
     padding: 20px 60px;
-    background-color: #a610b9;
+    background-color: #ff2727;
     color: white;
     border: none;
     font-size: 30px;
@@ -127,13 +127,32 @@ img.logo2 {
     padding: 8px; 
     text-align: left; }
 
-
-  /* estilo visual para el label seleccionado (opcional) */
+ /* estilo visual para el label seleccionado (opcional) */
   #consulta-radio:checked ~ #botonesArriba label[for="consulta-radio"],
   #alta-radio:checked ~ #botonesArriba label[for="alta-radio"],
   #baja-radio:checked ~ #botonesArriba label[for="baja-radio"] {
-    box-shadow: 0 0 0 4px rgba(0,0,0,0.06) inset;
+    box-shadow: 0 0 0 4px rgb(37, 157, 255) inset;
+
+    
   }
+  /* Ocultar la tabla general por defecto */
+#productos-tabla { 
+  display: none; 
+  margin-top: 20px; 
+}
+
+/* Mostrar la tabla general solo cuando está activado el toggle */
+#toggle:checked ~ #productos-tabla { 
+  display: block; 
+}
+
+/* Pero si el usuario elige consulta/alta/baja, ocultamos la tabla general */
+#consulta-radio:checked ~ #productos-tabla,
+#alta-radio:checked ~ #productos-tabla,
+#baja-radio:checked ~ #productos-tabla {
+  display: none;
+}
+
 </style>
 </head>
 <body>
@@ -144,7 +163,7 @@ img.logo2 {
   <input type="checkbox" id="toggle">
 
   <!-- radios (ocultos) que controlan qué sección se muestra -->
-  <input type="radio" name="menu" id="consulta-radio" checked>
+  <input type="radio" name="menu" id="consulta-radio">
   <input type="radio" name="menu" id="alta-radio">
   <input type="radio" name="menu" id="baja-radio">
 
@@ -161,10 +180,24 @@ img.logo2 {
     <label for="baja-radio">Baja</label>
   </div>
 
+  <div id="productos-tabla">
+  <h2>Tabla General de Productos</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Producto</th><th>Cantidad</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>01</td><td>Maruchan</td><td>100</td></tr>
+      <tr><td>02</td><td>Hellokitty-Perfume</td><td>50</td></tr>
+      <tr><td>03</td><td>Sabritas</td><td>50</td></tr>
+      <tr><td>04</td><td>Verduras</td><td>50</td></tr>
+    </tbody>
+  </table>
+</div>
   <!-- secciones / tablas -->
   <div id="productos">
     <div id="consulta" class="section">
-      <h2>Consulta de Productos</h2>
+      <h2>Productos</h2>
       <table>
         <thead>
           <tr><th>Nombre</th><th>Precio</th><th>Cantidad</th></tr>
@@ -178,7 +211,7 @@ img.logo2 {
     </div>
 
     <div id="alta" class="section">
-      <h2>Alta de Productos</h2>
+      <h2>Productos</h2>
         <table>
             <thead>
                 <tr>
@@ -244,7 +277,7 @@ img.logo2 {
     </div>
 
     <div id="baja" class="section">
-      <h2>Baja de Productos</h2>
+      <h2>Productos</h2>
       <table>
         <thead>
           <tr><th>Nombre</th><th>Precio</th><th>Cantidad</th><th>Acción</th></tr>
