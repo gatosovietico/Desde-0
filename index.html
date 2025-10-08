@@ -11,7 +11,7 @@
   }
 
 img.logo {
-    position: fixed; 
+    position: absolute; 
     top: 8px;    
     left: 8px;     
     max-width: 150px;
@@ -19,7 +19,7 @@ img.logo {
     z-index: 1000;  
 }
 img.logo2 {
-    position: fixed; 
+    position: absolute; 
     top: 8px;    
     right: 8px;     
     max-width: 150px;
@@ -42,13 +42,14 @@ img.logo2 {
     }
 
     h3 {
-        position: fixed;
+        position: absolute;
     right: 20px;
     top: 125px;
     color: lightgreen;
     font-size: 18px;
     margin-top: 60px;
     }
+    
   /* checkbox toggle principal */
   #toggle {
      display: none;
@@ -74,7 +75,7 @@ img.logo2 {
 
    #botonesArriba {
     display: none;
-    margin-top: -50px;
+    margin-top: 30px;
     text-align: center;
   }
 
@@ -102,7 +103,10 @@ img.logo2 {
 }
 
   /* contenedor de secciones (tablas) - oculto por defecto */
-  #productos { display: none; margin-top: 20px; }
+#productos { 
+  display: none; 
+  margin-top: 150px;   /* Mueve las tablas de consulta, alta y baja más abajo */
+}
   #toggle:checked ~ #productos { display: block; }
 
   /* secciones ocultas por defecto */
@@ -152,7 +156,10 @@ img.logo2 {
 #baja-radio:checked ~ #productos-tabla {
   display: none;
 }
-
+#productos-tabla { 
+  display: none; 
+  margin-top: 150px; 
+}
 </style>
 </head>
 <body>
@@ -173,15 +180,9 @@ img.logo2 {
 
   <label for="toggle">Productos</label>
 
-  <div id="botonesArriba">
-    <!-- aquí usamos labels con el mismo texto de tus botones -->
-    <label for="consulta-radio">Consulta</label>
-    <label for="alta-radio">Alta</label>
-    <label for="baja-radio">Baja</label>
-  </div>
 
   <div id="productos-tabla">
-  <h2>Tabla General de Productos</h2>
+  <h2> Tabla General de Productos </h2>
   <table>
     <thead>
       <tr><th>Imagen</th><th>ID</th><th>Producto</th><th>Descripcion</th><th>Cantidad</th>
@@ -195,6 +196,8 @@ img.logo2 {
     </tbody>
   </table>
 </div>
+
+  
   <!-- secciones / tablas -->
   <div id="productos">
     <div id="consulta" class="section">
@@ -289,6 +292,13 @@ img.logo2 {
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div id="botonesArriba">
+    <!-- aquí usamos labels con el mismo texto de tus botones -->
+    <label for="consulta-radio">Consulta</label>
+    <label for="alta-radio">Alta</label>
+    <label for="baja-radio">Baja</label>
   </div>
 
 </body>
